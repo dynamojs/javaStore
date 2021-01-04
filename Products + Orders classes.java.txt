@@ -1,0 +1,120 @@
+public class Products {
+
+	private int Mount;
+	private String Name;
+	private int PriceOfPiece ;
+	private int Ec_Id;
+	private int Pid;
+	
+
+	public Products(int mount , String name, int price, int ecid , int pid) {
+		super();
+		Mount = mount;
+		Name = name;
+		PriceOfPiece = price;
+		Ec_Id= ecid;
+		Pid = pid;
+	
+	}
+
+	public int getMount() {
+		return Mount;
+	}
+
+	public void setMount(int mount) {
+		Mount = mount;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public int getPriceOfPiece() {
+		return PriceOfPiece;
+	}
+
+	public void setPriceOfPiece (int price) {
+		PriceOfPiece = price;
+	}
+
+	public int getEc_Id() {
+		return Ec_Id;
+	}
+
+	public void setEc_Id(int ecid) {
+		Ec_Id= ecid;
+	}
+	public int getPid() {
+		return Pid;
+	}
+
+	public void setPid(int pid) {
+		Pid = pid;
+	}
+
+}
+
+///////////////////////////////////////////////////////////
+public class Orders {
+
+	private int Orderid;
+	private String Date;
+	private int Tprice ;
+	private int Sc_Id;
+	private int Pid;
+	
+
+	public Orders(int oid , String date, int tprice, int scid , int pid) {
+		super();
+		Orderid = oid;
+		Date = date;
+		Tprice = tprice;
+		Sc_Id= scid;
+		Pid = pid;
+	
+	}
+
+	public int getOrderid() {
+		return Orderid;
+	}
+
+	public void setOrderid(int oid) {
+		Orderid = oid;
+	}
+
+	public String getDate() {
+		return Date;
+	}
+
+	public void setDate(String date) {
+		Date = date;
+	}
+
+	public int getTprice() {
+		return Tprice;
+	}
+
+	public void setTprice (int tprice) {
+		Tprice = tprice;
+	}
+
+	public int getSc_Id() {
+		return Sc_Id;
+	}
+
+	public void setSc_Id(int scid) {
+		Sc_Id= scid;
+	}
+	public int getPid() {
+		return Pid;
+	}
+
+	public void setPid(int pid) {
+		Pid = pid;
+	}
+
+}

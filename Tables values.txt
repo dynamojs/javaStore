@@ -1,0 +1,49 @@
+
+create database companyy;
+use companyy;
+
+create table cars( num int primary key, Model varchar(30), Year int, GVWR int);
+create table employee( ename varchar(20), E_id int primary key, birthdate varchar(20), since varchar(20)); 
+
+alter table salesrepresentative add constraint foreign key(E_id) references employee (E_id);
+alter table  delivery modify E_id int primary key; 
+
+
+create table salesRepresentative (E_id int primary key); 
+create table exportingcompany (EC_id int primary key, address varchar(30), EC_name varchar(30), phone varchar(10));
+
+
+create table product ( name varchar(20) ,  
+priceofpiece int, EC_id int, product_id int primary key,
+ constraint foreign key (EC_id) references exportingcompany(EC_id));
+ 
+ insert into product 
+values  ("Earlight",110,2005501),("Thermocare stethoscope superb",170,2003770),
+ ("Package",150,1007799), ("Needles",85,1308279);
+ Alter table product Modify product_id int auto_increment;
+
+show tables;
+
+create table delivery (E_id int, carnum int , constraint foreign key (E_id) references employee(E_id),
+constraint foreign key (carnum) references cars(num));
+
+create table suppliedcenters (SC_name varchar(20), SR_id int , SC_id int primary key, address varchar(20),
+SC_phone varchar(10), constraint foreign key (SR_id) references salesRepresentative(E_id));
+
+create table purchase (o_id int primary key,  pid int, date varchar (20), D_id int,
+ constraint foreign key (product_id) references  product(product_id),
+ constraint foreign key (D_id) references  delivery(E_id));
+ 
+ insert into purchase
+values  ("111",2095501,123),("121",2107501,113),
+ ("152",7125501,413), ("111",1275521,183);
+ Alter table purchase Modify pid int auto_increment;
+
+create table moderator(E_id int ,
+ foreign key(E_id) references employee(E_id)); 
+ 
+ create table dealswith (E_id int, EC_id int,
+ primary key(E_id, EC_id),
+ foreign key(E_id) references moderator(E_id), 
+ foreign key(EC_id) references exportingcompany(EC_id));
+
